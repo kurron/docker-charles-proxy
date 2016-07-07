@@ -2,9 +2,9 @@ FROM kurron/docker-jetbrains-base:latest
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
-LABEL org.kurron.ide.name="Charles Proxy" org.kurron.ide.version=3.11.2
+LABEL org.kurron.ide.name="Charles Proxy" org.kurron.ide.version=3.11.5
 
-ADD https://www.charlesproxy.com/assets/release/3.11.2/charles-proxy-3.11.2.tar.gz /tmp/ide.tar.gz
+ADD https://www.charlesproxy.com/assets/release/3.11.5/charles-proxy-3.11.5.tar.gz /tmp/ide.tar.gz
 
 RUN mkdir -p /opt/ide && \
     tar zxvf /tmp/ide.tar.gz --strip-components=1 -C /opt/ide && \

@@ -1,13 +1,17 @@
-idea:
-    build: .
-    labels:
-        org.kurron.description: "Charles Proxy"
-        org.kurron.version: "3.11.2"
-    container_name: "charles"
-    net: "host"
-    volumes:
+version: '2'
+services:
+    charles:
+        build: .
+        image: charles:compose
+        container_name: "charles"
+        network_mode: "host"
+        volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
         - /tmp/.X11-unix:/tmp/.X11-unix
         - /home/vagrant:/home/developer
-    environment:
-        DISPLAY: unix:0.0
-    user: 1000:1000
+        stdin_open: true
+        tty: true
+        user: 1000:1000
+        environment:
+            DISPLAY: unix:0.0
+
